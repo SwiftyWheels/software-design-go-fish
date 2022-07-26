@@ -10,8 +10,9 @@ package ca.sheridancollege.project;
  * code should remember to add themselves as a modifier.
  *
  * @author dancye
+ * @author Patrick
  */
-public abstract class Card {
+public class Card {
     //default modifier for child classes
 
     /**
@@ -22,6 +23,8 @@ public abstract class Card {
      * regular playing card etc.
      */
     @Override
-    public abstract String toString();
+    public String toString() {
+        return "";
+    }
 
 }
