@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author Peter Dropulic
  */
 public abstract class Game {
 
