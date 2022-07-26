@@ -10,6 +10,7 @@ package ca.sheridancollege.project;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author Wenya Guo
  */
 public abstract class Player {
 
