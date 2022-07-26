@@ -15,7 +15,6 @@ import java.util.List;
  * @author Paul Bonenfant Jan 2020
  */
 public abstract class Game {
-
     private final String name;//the title of the game
     private List<Player> players;// the players of the game
 
