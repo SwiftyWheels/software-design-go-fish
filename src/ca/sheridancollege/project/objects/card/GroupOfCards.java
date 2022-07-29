@@ -2,8 +2,9 @@
  * SYST 17796 Project Base code. Students can modify and extend to implement
  * their game. Add your name as an author and the date!
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege.project.objects.card;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,14 +16,12 @@ import java.util.List;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
-public class GroupOfCards {
+public abstract class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
-    private List<Card> cards;
-    private int size;//the size of the grouping
+    private List<Card> cards = new ArrayList<>();
 
-    public GroupOfCards(int size) {
-        this.size = size;
+    protected GroupOfCards() {
     }
 
     /**
@@ -34,22 +33,12 @@ public class GroupOfCards {
         return cards;
     }
 
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
+
     public void shuffle() {
         Collections.shuffle(cards);
-    }
-
-    /**
-     * @return the size of the group of cards
-     */
-    public int getSize() {
-        return size;
-    }
-
-    /**
-     * @param size the max size for the group of cards
-     */
-    public void setSize(int size) {
-        this.size = size;
     }
 
 }//end class

@@ -2,7 +2,10 @@
  * SYST 17796 Project Base code. Students can modify and extend to implement
  * their game. Add your name as an author and the date!
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege.project.objects.card;
+
+import ca.sheridancollege.project.enums.CardSuit;
+import ca.sheridancollege.project.enums.CardValue;
 
 /**
  * A class to be used as the base Card class for the project. Must be general
@@ -13,7 +16,21 @@ package ca.sheridancollege.project;
  * @author Patrick
  */
 public class Card {
-    //default modifier for child classes
+    private final CardSuit cardSuit;
+    private final CardValue cardValue;
+
+    public Card(CardSuit cardSuit, CardValue cardValue) {
+        this.cardSuit = cardSuit;
+        this.cardValue = cardValue;
+    }
+
+    public CardSuit getCardSuit() {
+        return cardSuit;
+    }
+
+    public CardValue getCardValue() {
+        return cardValue;
+    }
 
     /**
      * Students should implement this method for their specific children
@@ -24,7 +41,9 @@ public class Card {
      */
     @Override
     public String toString() {
-        return "";
+        return "Card{" +
+                "cardSuit=" + cardSuit +
+                ", cardValue=" + cardValue +
+                '}';
     }
-
 }
