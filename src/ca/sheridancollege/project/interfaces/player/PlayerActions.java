@@ -1,5 +1,11 @@
 package ca.sheridancollege.project.interfaces.player;
 
+import ca.sheridancollege.project.enums.CardValue;
+import ca.sheridancollege.project.objects.card.Card;
+import ca.sheridancollege.project.objects.card.DeckCards;
+import ca.sheridancollege.project.objects.player.Player;
+import java.util.List;
+
 /**
  * An interface contains methods to be implemented by GoFishPlayer
  * 
@@ -7,8 +13,8 @@ package ca.sheridancollege.project.interfaces.player;
  */
 public interface PlayerActions {
     
-    public void goFish();
+    boolean goFish(Player player, CardValue cardValue, DeckCards deckCards);
     
-    public void handsCard();
+    List<Card> handsCard(CardValue cardValue);
 
 }
