@@ -14,4 +14,12 @@ public class HandCards {
     public HandCards(List<Card> handCards) {
         this.handCards = handCards;
     }
+    
+    public List<Card> getHandCards() {
+        return this.handCards;
+    }
+    
+    public void setHandCards(List<Card> handCards) {
+        this.handCards = handCards;
+    }
 }

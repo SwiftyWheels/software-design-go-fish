@@ -17,9 +17,9 @@ import ca.sheridancollege.project.objects.card.HandCards;
  */
 public abstract class Player {
 
-    private String name; //the unique name for this player
-    private Books books;
-    private HandCards handcards;
+    protected String name; //the unique name for this player
+    protected Books books;
+    protected HandCards handcards;
 
     /**
      * A constructor that allows you to set the player's unique ID
