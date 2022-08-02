@@ -4,35 +4,56 @@
  */
 package ca.sheridancollege.project.objects.player;
 
+import ca.sheridancollege.project.interfaces.player.PlayerActions;
 import ca.sheridancollege.project.objects.card.Books;
 import ca.sheridancollege.project.objects.card.HandCards;
 
+import java.util.Objects;
+
 
 /**
- * A class that models each Player in the game. 
+ * A class that models each Player in the game.
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  * @author Wenya Guo 28-Jul-2022
+ * @author Patrick Hogg
  */
-public abstract class Player {
+public abstract class Player implements PlayerActions {
+    private String name;
+    private Books books;
+    private HandCards handCards;
 
-    protected String name; //the unique name for this player
-    protected Books books;
-    protected HandCards handcards;
+    protected Player() {
+    }
 
     /**
      * A constructor that allows you to set the player's unique ID
      *
      * @param name the unique ID to assign to this player.
      */
-    protected Player(String name, Books books, HandCards handcards) {
+    protected Player(String name) {
         this.name = name;
-        this.books = books;
-        this.handcards = handcards;
+        this.books = new Books();
+        this.handCards = new HandCards();
     }
 
     /**
+     * Instantiates a new Player with provided arguments.
+     *
+     * @param name      the name of the player
+     * @param books     the books of the player
+     * @param handCards the hand cards of the player
+     */
+    protected Player(String name, Books books, HandCards handCards) {
+        this.name = name;
+        this.books = books;
+        this.handCards = handCards;
+    }
+
+    /**
+     * Gets name.
+     *
      * @return the player name
      */
     public String getName() {
@@ -47,24 +68,65 @@ public abstract class Player {
     public void setName(String name) {
         this.name = name;
     }
-    
-     public Books getBooks() {
+
+    /**
+     * Gets books.
+     *
+     * @return the books
+     */
+    public Books getBooks() {
         return books;
     }
 
+    /**
+     * Sets books.
+     *
+     * @param books the books
+     */
     public void setBooks(Books books) {
         this.books = books;
     }
 
-    public HandCards getHandcards() {
-        return handcards;
+    /**
+     * Gets hand cards.
+     *
+     * @return the hand cards
+     */
+    public HandCards getHandCards() {
+        return handCards;
     }
 
-    public void setHandcards(HandCards handcards) {
-        this.handcards = handcards;
+    /**
+     * Sets hand cards.
+     *
+     * @param handCards the hand cards
+     */
+    public void setHandCards(HandCards handCards) {
+        this.handCards = handCards;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Player player)) {
+            return false;
+        }
+        return Objects.equals(name, player.name) && Objects.equals(books,
+                                                                   player.books)
+               && Objects.equals(handCards, player.handCards);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, books, handCards);
+    }
 
+    @Override
+    public String toString() {
+        return "Player{" + "name='" + name + '\'' + ", books=" + books
+               + ", handCards=" + handCards + '}';
+    }
 }
 
