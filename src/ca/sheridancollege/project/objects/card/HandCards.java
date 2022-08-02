@@ -1,25 +1,22 @@
 package ca.sheridancollege.project.objects.card;
 
-import java.util.List;
+import ca.sheridancollege.project.enums.CardValue;
 
 /**
- * This class +++ Insert class description here +++
- *
  * @author Wenya Guo
+ * @author Patrick Hogg
  */
-public class HandCards {
-    
-    private List<Card> handCards;
-    
-    public HandCards(List<Card> handCards) {
-        this.handCards = handCards;
-    }
-    
-    public List<Card> getHandCards() {
-        return this.handCards;
-    }
-    
-    public void setHandCards(List<Card> handCards) {
-        this.handCards = handCards;
+public class HandCards extends GroupOfCards {
+
+
+    /**
+     * Can make book boolean. This will check if the current list of cards
+     * contains 4 of the same card value.
+     *
+     * @param cardValue the card value to check
+     * @return true if it's possible to make a Book object
+     */
+    public boolean canMakeBook(CardValue cardValue) {
+        return countNumOfCards(cardValue) == 4;
     }
 }

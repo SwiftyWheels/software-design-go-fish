@@ -1,26 +1,40 @@
 package ca.sheridancollege.project.objects.player;
 
-import ca.sheridancollege.project.interfaces.card.CardActions;
-import ca.sheridancollege.project.objects.card.Books;
-import ca.sheridancollege.project.objects.card.HandCards;
+import ca.sheridancollege.project.objects.card.DeckCards;
 
 /**
- * A class that models the dealer in the game.
- * Dealer is used to deal the cards and set the start player
+ * A class that models the dealer in the game. Dealer is used to deal the cards
+ * and set the start player
  *
  * @author Wenya Guo 28-Jul-2022
+ * @author Patrick Hogg
  */
-public class Dealer extends Player{
+public class Dealer extends GoFishPlayer {
 
-    public Dealer(String name, Books books, HandCards handcards) {
-        super(name, books, handcards);
+    /**
+     * Instantiates a new Dealer.
+     *
+     * @param name the name
+     */
+    public Dealer(String name) {
+        super(name);
     }
-    
-    public void dealCards(CardActions cardActions, Players players) {
-        for (Player player : players.getPlayers()) {
-            HandCards handCards = new HandCards(cardActions.withdrawCards());
-            player.setHandcards(handCards);
+
+    /**
+     * Deal cards to all players.
+     *
+     * @param deckCards the deck cards
+     * @param players   the players
+     */
+    public void dealCards(DeckCards deckCards, Players players) {
+        // Sets the amount to deal based on the amount of players in the game
+        int amountToDeal = players.getPlayerList().size() < 4 ? 7 : 5;
+
+        // Loop through all players and have them withdraw the amount of
+        // cards previously set above in amountToDeal
+        for (Player player : players.getPlayerList()) {
+            player.getHandCards().setCards(
+                    deckCards.withdrawCards(amountToDeal));
         }
     }
-
 }

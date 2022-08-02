@@ -21,12 +21,19 @@ public abstract class Game {
     private final String name;//the title of the game
     private List<Player> players;// the players of the game
 
+    /**
+     * Instantiates a new Game.
+     *
+     * @param name the name
+     */
     protected Game(String name) {
         this.name = name;
         players = new ArrayList<>();
     }
 
     /**
+     * Gets name.
+     *
      * @return the name
      */
     public String getName() {
@@ -34,6 +41,8 @@ public abstract class Game {
     }
 
     /**
+     * Gets players.
+     *
      * @return the players of this game
      */
     public List<Player> getPlayers() {
@@ -41,6 +50,8 @@ public abstract class Game {
     }
 
     /**
+     * Sets players.
+     *
      * @param players the players of this game
      */
     public void setPlayers(List<Player> players) {

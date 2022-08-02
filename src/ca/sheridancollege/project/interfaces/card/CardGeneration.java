@@ -10,5 +10,10 @@ import java.util.List;
  * @author Patrick Hogg
  */
 public interface CardGeneration {
+    /**
+     * Generate cards list.
+     *
+     * @return the list
+     */
     List<Card> generateCards();
 }
