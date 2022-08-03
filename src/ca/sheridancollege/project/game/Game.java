@@ -4,10 +4,8 @@
  */
 package ca.sheridancollege.project.game;
 
-import ca.sheridancollege.project.objects.player.Player;
-
-import java.util.ArrayList;
-import java.util.List;
+import ca.sheridancollege.project.objects.card.DeckCards;
+import ca.sheridancollege.project.objects.player.Players;
 
 /**
  * The class that models your game. You should create a more specific child of
@@ -18,43 +16,21 @@ import java.util.List;
  * @author Peter Dropulic
  */
 public abstract class Game {
-    private final String name;//the title of the game
-    private List<Player> players;// the players of the game
+
+    private Players players;
 
     /**
      * Instantiates a new Game.
-     *
-     * @param name the name
      */
-    protected Game(String name) {
-        this.name = name;
-        players = new ArrayList<>();
+    protected Game(Players players) {
+        this.players = players;
     }
 
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Gets players.
-     *
-     * @return the players of this game
-     */
-    public List<Player> getPlayers() {
+    public Players getPlayers() {
         return players;
     }
 
-    /**
-     * Sets players.
-     *
-     * @param players the players of this game
-     */
-    public void setPlayers(List<Player> players) {
+    public void setPlayers(Players players) {
         this.players = players;
     }
 
@@ -62,7 +38,7 @@ public abstract class Game {
      * Play the game. This might be one method or many method calls depending on
      * your game.
      */
-    public abstract void play();
+    public abstract void play(DeckCards deckCards);
 
     /**
      * When the game is over, use this method to declare and display a winning

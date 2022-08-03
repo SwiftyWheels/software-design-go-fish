@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * This class +++ Insert class description here +++
+ * This class will represent the list of books that a player has.
  *
  * @author Wenya Guo
  * @author Patrick Hogg

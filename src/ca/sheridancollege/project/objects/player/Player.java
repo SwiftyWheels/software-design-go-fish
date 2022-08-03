@@ -125,8 +125,18 @@ public abstract class Player implements PlayerActions {
 
     @Override
     public String toString() {
-        return "Player{" + "name='" + name + '\'' + ", books=" + books
-               + ", handCards=" + handCards + '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Player{" + "name='").append(name).append("'\n");
+        stringBuilder.append("Cards in Hand: {\n");
+        handCards.getCards().forEach(
+                card -> stringBuilder.append(card).append("\n"));
+        stringBuilder.append("}\n");
+        stringBuilder.append("Books Made: ={\n");
+        books.getBookList().forEach(
+                book -> stringBuilder.append(book).append("\n"));
+        stringBuilder.append("}\n");
+
+        return stringBuilder.toString();
     }
 }
 
