@@ -44,6 +44,7 @@ public class GoFishPlayer extends Player implements PlayerActions {
         if (!deckCards.getCards().isEmpty()) {
             // Grab the top card from the deck
             Card topCard = deckCards.getTopCard();
+            System.out.println("Drawing from deck...");
             System.out.println("Drew card: " + topCard);
             if (topCard != null) {
                 // Add the top card to your hand cards
@@ -53,7 +54,7 @@ public class GoFishPlayer extends Player implements PlayerActions {
                 // Try to make a book with the newly received card
                 tryToMakeBook(topCard);
             }
-        }else{
+        } else {
             System.out.println("Deck is empty.");
         }
     }
@@ -62,7 +63,6 @@ public class GoFishPlayer extends Player implements PlayerActions {
     public void handCardToPlayer(Player player, Card card) {
         // If the player hand contains the card that was asked
         if (getHandCards().getCards().contains(card)) {
-            System.out.println("Giving card to " + player);
             // Add the card to the asking players hand
             player.getHandCards().addCard(card);
             // Remove the card from the asked players hand
@@ -73,8 +73,12 @@ public class GoFishPlayer extends Player implements PlayerActions {
     @Override
     public void askPlayerForCard(Player player, CardValue cardValue,
                                  DeckCards deckCards, int priorityNum) {
-        System.out.println(this.getName() + "'s turn.");
-        System.out.println("Asking for: " + cardValue + " from: " + player.getName());
+        System.out.println("\n" + this.getName() + "'s turn.");
+        System.out.println(
+                this.getName() + " has " + this.getBooks().getBookList().size()
+                + " books.");
+        System.out.println(
+                "Asking for: " + cardValue + " from: " + player.getName());
 
         List<Card> allCardsOfValue = player.getHandCards().getAllCardsOfValue(
                 cardValue);
@@ -113,16 +117,22 @@ public class GoFishPlayer extends Player implements PlayerActions {
                                                            priorityList);
 
         if (priorityNum < priorityList.size()) {
-            askPlayerForCard(player, priorityList.get(priorityNum), deckCards
-                    , priorityNum);
-        }else{
+            askPlayerForCard(player, priorityList.get(priorityNum), deckCards,
+                             priorityNum);
+        } else {
             System.out.println("Entered invalid priority num");
-            askPlayerForCard(player, priorityList.get(0), deckCards, priorityNum);
+            askPlayerForCard(player, priorityList.get(0), deckCards,
+                             priorityNum);
         }
 
     }
 
 
+    /**
+     * Will try to make a book with the card provided in the arguments.
+     *
+     * @param card the card to try to make a book from.
+     */
     private void tryToMakeBook(Card card) {
         // Check if this player can make a book
         if (card != null && getHandCards().canMakeBook(card.getCardValue())) {
@@ -138,5 +148,6 @@ public class GoFishPlayer extends Player implements PlayerActions {
             getHandCards().getCards().removeAll(bookCards);
         }
     }
+
 
 }

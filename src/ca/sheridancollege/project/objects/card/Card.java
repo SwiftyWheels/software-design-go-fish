@@ -75,9 +75,6 @@ public class Card {
      */
     @Override
     public String toString() {
-        return "Card{" +
-                "cardSuit=" + cardSuit +
-                ", cardValue=" + cardValue +
-                '}';
+        return "Card{" + cardValue + " of " + cardSuit + "}";
     }
 }
