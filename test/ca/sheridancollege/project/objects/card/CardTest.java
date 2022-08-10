@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ca.sheridancollege.project.objects.card;
 
 import ca.sheridancollege.project.enums.CardSuit;
@@ -15,9 +11,9 @@ import static org.junit.Assert.*;
 import java.util.Objects;
 
 /**
- *
  * @author Peter Dropulic
  */
+
 public class CardTest {
     
     public CardTest() {
@@ -27,6 +23,7 @@ public class CardTest {
      * Test of getCardSuitBad method, of class Card.
      * Checks for the incorrect card suit.
      */
+    
     @Test
     public void testGetCardSuitBad() {
         System.out.println("getCardSuitBad");
@@ -66,6 +63,7 @@ public class CardTest {
      * Test of getCardValueBad method, of class Card.
      * Checks for the correct card value.
      */
+    
     @Test
     public void testGetCardValueGood() {
         System.out.println("getCardValueGood");
@@ -80,6 +78,7 @@ public class CardTest {
      * Checks if the equal method works correctly and can tell that two
      * different card objects are not equal/same.
      */
+    
     @Test
     public void testEqualsBad() {
         System.out.println("equalsBad");
@@ -95,6 +94,7 @@ public class CardTest {
      *Checks if the equal method works correctly and can tell that two card
      * objects are the equal/same.
      */
+    
     @Test
     public void testEqualsGood() {
         System.out.println("equalsGood");
@@ -109,6 +109,7 @@ public class CardTest {
      * Bad Test of hashCode method, of class Card.
      * Checks if the hashCode of a card is incorrect.
      */
+    
     @Test
     public void testHashCodeBad() {
         System.out.println("hashCodeBad");
@@ -122,6 +123,7 @@ public class CardTest {
      * Good Test of hashCode method, of class Card.
      * Checks if the hashCode of a card is correct.
      */
+    
     @Test
     public void testHashCodeGood() {
         System.out.println("hashCodeGood");
@@ -136,6 +138,7 @@ public class CardTest {
      *Checks if the toString created from the card returns the incorrect card 
      * in String form.
      */
+    
     @Test
     public void testToStringBad() {
         System.out.println("toStringBad");
@@ -150,6 +153,7 @@ public class CardTest {
      * Checks if the toString created from the card returns the correct card 
      * in String form.
      */
+    
     @Test
     public void testToStringGood() {
         System.out.println("toStringGood");

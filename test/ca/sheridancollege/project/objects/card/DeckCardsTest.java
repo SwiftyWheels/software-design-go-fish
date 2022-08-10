@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ca.sheridancollege.project.objects.card;
 
 import ca.sheridancollege.project.enums.CardSuit;
@@ -29,6 +25,7 @@ public class DeckCardsTest {
      * Good Test of generateCards method, of class DeckCards.
      * Checks if the number of cards generated in the deck is 52.
      */
+    
     @Test
     public void testGenerateCardsGood() {
         System.out.println("generateCardsGood");
