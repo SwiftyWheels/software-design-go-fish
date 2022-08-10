@@ -16,6 +16,7 @@ import static org.junit.Assert.assertNotEquals;
 public class CardTest {
 
     public CardTest() {
+        System.out.println("Hello World");
     }
 
     /**
