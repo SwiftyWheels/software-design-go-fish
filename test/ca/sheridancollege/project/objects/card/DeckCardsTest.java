@@ -1,36 +1,29 @@
 package ca.sheridancollege.project.objects.card;
 
-import ca.sheridancollege.project.enums.CardSuit;
-import ca.sheridancollege.project.enums.CardValue;
-import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Random;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Peter Dropulic
  */
 public class DeckCardsTest {
-    
+
     public DeckCardsTest() {
     }
-    
+
     /**
      * Good Test of generateCards method, of class DeckCards.
      * Checks if the number of cards generated in the deck is 52.
      */
-    
+
     @Test
     public void testGenerateCardsGood() {
         System.out.println("generateCardsGood");
         DeckCards instance = new DeckCards();
-        //Genereate a sample deck that should have the correct number of cards.
+        //Generate a sample deck that should have the correct number of cards.
         List<Card> sampleDeck = instance.generateCards();
         int expResult = 52;
         int result = sampleDeck.size();

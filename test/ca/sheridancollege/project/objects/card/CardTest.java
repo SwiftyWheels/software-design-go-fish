@@ -2,20 +2,19 @@ package ca.sheridancollege.project.objects.card;
 
 import ca.sheridancollege.project.enums.CardSuit;
 import ca.sheridancollege.project.enums.CardValue;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 import java.util.Objects;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * @author Peter Dropulic
  */
 
 public class CardTest {
-    
+
     public CardTest() {
     }
 
@@ -23,7 +22,7 @@ public class CardTest {
      * Test of getCardSuitBad method, of class Card.
      * Checks for the incorrect card suit.
      */
-    
+
     @Test
     public void testGetCardSuitBad() {
         System.out.println("getCardSuitBad");
@@ -32,7 +31,7 @@ public class CardTest {
         CardSuit result = instance.getCardSuit();
         assertNotEquals(expResult, result);
     }
-    
+
      /**
      * Good Test of getCardSuit method, of class Card.
      * Checks for the correct card suit.
@@ -45,7 +44,7 @@ public class CardTest {
         CardSuit result = instance.getCardSuit();
         assertEquals(expResult, result);
     }
-    
+
     /**
      * Bad Test of getCardValue method, of class Card.
      * Checks for the incorrect card value.
@@ -58,12 +57,12 @@ public class CardTest {
         CardValue result = instance.getCardValue();
         assertNotEquals(expResult, result);
     }
-    
+
     /**
      * Test of getCardValueBad method, of class Card.
      * Checks for the correct card value.
      */
-    
+
     @Test
     public void testGetCardValueGood() {
         System.out.println("getCardValueGood");
@@ -78,7 +77,7 @@ public class CardTest {
      * Checks if the equal method works correctly and can tell that two
      * different card objects are not equal/same.
      */
-    
+
     @Test
     public void testEqualsBad() {
         System.out.println("equalsBad");
@@ -88,13 +87,13 @@ public class CardTest {
         boolean result = instance.equals(o);
         assertNotEquals(expResult, result);
     }
-    
+
     /**
      * Good Test of equals method, of class Card.
      *Checks if the equal method works correctly and can tell that two card
      * objects are the equal/same.
      */
-    
+
     @Test
     public void testEqualsGood() {
         System.out.println("equalsGood");
@@ -104,12 +103,12 @@ public class CardTest {
         boolean result = instance.equals(o);
         assertEquals(expResult, result);
     }
-    
+
      /**
      * Bad Test of hashCode method, of class Card.
      * Checks if the hashCode of a card is incorrect.
      */
-    
+
     @Test
     public void testHashCodeBad() {
         System.out.println("hashCodeBad");
@@ -118,12 +117,12 @@ public class CardTest {
         int result = instance.hashCode();
         assertNotEquals(expResult, result);
     }
-  
+
     /**
      * Good Test of hashCode method, of class Card.
      * Checks if the hashCode of a card is correct.
      */
-    
+
     @Test
     public void testHashCodeGood() {
         System.out.println("hashCodeGood");
@@ -135,10 +134,10 @@ public class CardTest {
 
     /**
      * Bad Test of toString method, of class Card.
-     *Checks if the toString created from the card returns the incorrect card 
+     *Checks if the toString created from the card returns the incorrect card
      * in String form.
      */
-    
+
     @Test
     public void testToStringBad() {
         System.out.println("toStringBad");
@@ -147,13 +146,13 @@ public class CardTest {
         String result = instance.toString();
         assertNotEquals(expResult, result);
     }
-    
+
     /**
      * Good Test of toString method, of class Card.
-     * Checks if the toString created from the card returns the correct card 
+     * Checks if the toString created from the card returns the correct card
      * in String form.
      */
-    
+
     @Test
     public void testToStringGood() {
         System.out.println("toStringGood");

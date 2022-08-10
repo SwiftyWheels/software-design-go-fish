@@ -26,9 +26,9 @@ public class GoFish {
         GoFishPlayer peter = new GoFishPlayer("Peter");
 
         Players players = new Players();
-        players.addPlayer(patrick);
         players.addPlayer(wenya);
         players.addPlayer(peter);
+        players.addPlayer(patrick);
         GoFishGame game = new GoFishGame(players);
 
         // Plays the game
