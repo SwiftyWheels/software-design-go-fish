@@ -37,7 +37,6 @@ public class GoFishGame extends Game implements GameActions {
         simulateGame(deckCards, getPlayers());
         declareWinner();
         displayGameOver();
-
     }
 
     /**
