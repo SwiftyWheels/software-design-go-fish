@@ -14,4 +14,5 @@ The goal of this assignment is to reproduce the card game Go Fish as a playable,
 - UML Diagrams/Use Cases
 
 ## Screenshots
-Coming soon.
+<h3>UML Diagram</h3>
+<img src="Go-Fish Class Diagram/Go-Fish Class Diagram Updated.jpg">
